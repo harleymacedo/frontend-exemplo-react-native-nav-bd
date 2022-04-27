@@ -9,10 +9,9 @@ export default function Professor() {
 
     return (
         <View style={styles.container}>
-            <TextInput></TextInput>
-            <TextInput></TextInput>
-            <TouchableOpacity><Text>Professor</Text></TouchableOpacity>
-            <TouchableOpacity><Text>Disciplina</Text></TouchableOpacity>
+            <View style={styles.container}>
+            <Text style={styles.text1}>Disciplina</Text>
+        </View>
         </View>
     )
 
@@ -27,9 +26,7 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     text1: {
-
-    },
-    button1: {
-
+        fontSize: 20,
+        color: "#fff"
     }
 })

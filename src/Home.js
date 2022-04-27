@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import { StyleSheet, View, Text, TouchableOpacity, TextInput } from 'react-native';
 
-export default function Home(navigation) {
+export default function Home({navigation}) {
     const [email, setEmail] = useState(null);
     const [password, setPassword] = useState(null);
 
@@ -17,8 +17,8 @@ export default function Home(navigation) {
         <View style={styles.container}>
             <TextInput></TextInput>
             <TextInput></TextInput>
-            <TouchableOpacity style={styles.button1} onPress={navegarProfessor}><Text style={styles.text1}>Editar</Text></TouchableOpacity>
-            <TouchableOpacity style={styles.button1} onPress={navegarDisciplina}><Text style={styles.text1}>Postar</Text></TouchableOpacity>
+            <TouchableOpacity style={styles.button1} onPress={navegarProfessor}><Text style={styles.text1}>Professor</Text></TouchableOpacity>
+            <TouchableOpacity style={styles.button1} onPress={navegarDisciplina}><Text style={styles.text1}>Disciplina</Text></TouchableOpacity>
         </View>
     )
 
