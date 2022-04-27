@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View, Text, TouchableOpacity, TextInput } from 'react-native';
 
 export default function Home({navigation}) {
@@ -15,6 +16,7 @@ export default function Home({navigation}) {
 
     return (
         <View style={styles.container}>
+            <StatusBar style="light" />
             <TextInput></TextInput>
             <TextInput></TextInput>
             <TouchableOpacity style={styles.button1} onPress={navegarProfessor}><Text style={styles.text1}>Professor</Text></TouchableOpacity>
@@ -34,13 +36,14 @@ const styles = StyleSheet.create({
     },
     text1: {
         textAlign: 'center',
-        fontSize: 18,
-        fontWeight: 'bold'
+        fontSize: 26,
+        color: '#fff'
     },
     button1: {
-        backgroundColor: '#aaffff',
-        width: 100,
-        height: 30,
-        marginBottom: 20
+        backgroundColor: '#116611',
+        width: 160,
+        height: 40,
+        marginBottom: 20,
+        borderRadius: 4
     }
 })

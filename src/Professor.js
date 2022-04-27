@@ -10,7 +10,7 @@ export default function Professor() {
     return (
         <View style={styles.container}>
             <View style={styles.container}>
-            <Text style={styles.text1}>Disciplina</Text>
+            <Text style={styles.text1}>Professor</Text>
         </View>
         </View>
     )
