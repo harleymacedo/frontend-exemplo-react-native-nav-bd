@@ -21,46 +21,60 @@ function MainTabNavigator () {
         </Tab.Navigator>
     )
 }
-// const screens = (
-//   <NavigationContainer>
-//     <Stack.Navigator>
-//         <Stack.Screen name="Home" component={Home} 
-//         options={{
-//             headerStyle: {
-//             backgroundColor: '#124050',
-//             },
-//             headerTintColor: "#fff"
-//         }}/>
-//         <Stack.Screen name="Perfil" component={Perfil} 
-//         options={{
-//             headerStyle: {
-//             backgroundColor: '#124050',
-//             },
-//             headerTintColor: "#fff"
-//         }}
-//         />
-//         <Stack.Screen name="Cadastro" component={Cadastro} 
-//         options={{
-//             headerStyle: {
-//             backgroundColor: '#124050',
-//             },
-//             headerTintColor: "#fff"
-//         }}
-//         />
-//     </Stack.Navigator>
-//   </NavigationContainer>
-// )
+function MainScreenNavigator () {
+    return (
+        <NavigationContainer>
+           <Stack.Navigator>
+               <Stack.Screen name="Home" component={MainTabNavigator} />
+               <Stack.Screen name="Pefil" component={Perfil} />
+               <Stack.Screen name="Grade" component={Grade} />
+               <Stack.Screen name="Projeto" component={Projeto} />
+          </Stack.Navigator>
+        </NavigationContainer>
+    )
+}
+
 
 
 export default function AppNavigation() {
   return (
-    <NavigationContainer>
-        <Stack.Navigator>
-            <Stack.Screen name="Home" component={MainTabNavigator} />
-            <Stack.Screen name="Pefil" component={Perfil} />
-            <Stack.Screen name="Grade" component={Grade} />
-            <Stack.Screen name="Projeto" component={Projeto} />
-      </Stack.Navigator>
-    </NavigationContainer>
+
+  <NavigationContainer>
+    <Stack.Navigator>
+        <Stack.Screen name="Home" component={MainTabNavigator} 
+        options={{
+            title: "Professor Home",
+            headerStyle: {
+            backgroundColor: '#124050',
+            },
+            headerTintColor: "#fff"
+        }}/>
+        <Stack.Screen name="Perfil" component={Perfil} 
+        options={{
+            headerStyle: {
+            backgroundColor: '#124050',
+            },
+            headerTintColor: "#fff"
+        }}
+        />
+        <Stack.Screen name="Projeto" component={Projeto} 
+        options={{
+            headerStyle: {
+            backgroundColor: '#124050',
+            },
+            headerTintColor: "#fff"
+        }}
+        />
+        <Stack.Screen name="Grade" component={Grade} 
+        options={{
+            headerStyle: {
+            backgroundColor: '#124050',
+            },
+            headerTintColor: "#fff"
+        }}
+        />
+    </Stack.Navigator>
+  </NavigationContainer>
+
   );
 }
