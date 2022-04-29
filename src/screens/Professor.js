@@ -1,20 +1,12 @@
 import React from 'react';
-import { StyleSheet, View, Text, TouchableOpacity, TextInput } from 'react-native';
+import { StyleSheet, View, Text} from 'react-native';
 
 export default function Professor() {
-
-    const entrar = () => {
-
-    }
-
     return (
-        <View style={styles.container}>
-            <View style={styles.container}>
-            <Text style={styles.text1}>Professor</Text>
-        </View>
+        <View>
+            <Text>Professor</Text>
         </View>
     )
-
 }
 
 const styles = StyleSheet.create({
@@ -29,4 +21,4 @@ const styles = StyleSheet.create({
         fontSize: 20,
         color: "#fff"
     }
-})
+});
