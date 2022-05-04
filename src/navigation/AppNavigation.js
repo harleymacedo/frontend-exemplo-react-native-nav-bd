@@ -13,54 +13,37 @@ import Grade from '../screens/Grade';
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
-function MainTabNavigator () {
+function StackNavigator () {
     return (
-        <Tab.Navigator>
-            <Tab.Screen name="Professor" component={Professor} />
-            <Tab.Screen name="Disciplina" component={Disciplina} />
-        </Tab.Navigator>
+        <Stack.Navigator>
+            <Stack.Screen name="Professor" component={Professor} 
+            options={{
+                title: "Professor Home",
+                headerStyle: {
+                backgroundColor: '#124050',
+                },
+                headerTintColor: "#fff"
+            }}/>
+            <Stack.Screen name="Projeto" component={Projeto} 
+            options={{
+                title: "Projeto",
+                headerStyle: {
+                backgroundColor: '#124050',
+                },
+                headerTintColor: "#fff"
+            }}/>
+        </Stack.Navigator>
     )
 }
 
 
 export default function AppNavigation() {
   return (
-
-  <NavigationContainer>
-    <Stack.Navigator>
-        <Stack.Screen name="Home" component={MainTabNavigator} 
-        options={{
-            title: "Professor Home",
-            headerStyle: {
-            backgroundColor: '#124050',
-            },
-            headerTintColor: "#fff"
-        }}/>
-        <Stack.Screen name="Perfil" component={Perfil} 
-        options={{
-            headerStyle: {
-            backgroundColor: '#124050',
-            },
-            headerTintColor: "#fff"
-        }}
-        />
-        <Stack.Screen name="Projeto" component={Projeto} 
-        options={{
-            headerStyle: {
-            backgroundColor: '#124050',
-            },
-            headerTintColor: "#fff"
-        }}
-        />
-        <Stack.Screen name="Grade" component={Grade} 
-        options={{
-            headerStyle: {
-            backgroundColor: '#124050',
-            },
-            headerTintColor: "#fff"
-        }}
-        />
-    </Stack.Navigator>
+    <NavigationContainer>
+        <Tab.Navigator screenOptions={{ headerShown: false }} >
+            <Tab.Screen name="ProfessorTab" component={StackNavigator} options={{ tabBarLabel: 'Professor' }} />
+            <Tab.Screen name="DisciplinaTab" component={Disciplina} options={{ tabBarLabel: 'Disciplina' }}/>
+        </Tab.Navigator>
   </NavigationContainer>
 
   );

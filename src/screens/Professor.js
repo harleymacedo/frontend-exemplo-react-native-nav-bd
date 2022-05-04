@@ -5,22 +5,19 @@ import { Video } from 'expo-av';
 export default function Professor({navigation}) {
 
     const navegar = () => {
-        console.log('navegando');
         navigation.navigate('Projeto');
     }
 
     return (
         <View style={styles.container}>
-            <Text style={styles.text1}>Professor</Text>
-            <Button title="Projetos" onPress={navegar} style={styles.button1} />
+            <Text style={styles.text1}>Tela do professor</Text>
+            <Button title="Meus projetos" onPress={navegar} style={styles.button1} />
             <Video
               source={require('../../assets/videoplayback.mp4')}
               rate={1.0}
               volume={0.5}
               isMuted={false}
               resizeMode="cover"
-              shouldPlay
-              isLooping
               style={{ width: 400, height: 300 }}
               useNativeControls={true}
             />
