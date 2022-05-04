@@ -1,4 +1,5 @@
 import React from 'react';
+import { Image } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -41,10 +42,11 @@ export default function AppNavigation() {
   return (
     <NavigationContainer>
         <Tab.Navigator screenOptions={{ headerShown: false }} >
-            <Tab.Screen name="ProfessorTab" component={StackNavigator} options={{ tabBarLabel: 'Professor' }} />
-            <Tab.Screen name="DisciplinaTab" component={Disciplina} options={{ tabBarLabel: 'Disciplina' }}/>
+            <Tab.Screen name="ProfessorTab" component={StackNavigator} 
+                options={{ tabBarLabel: 'Professor', tabBarIcon: () => (<Image source={require('../../assets/professor-16.png')} />) }} />
+            <Tab.Screen name="DisciplinaTab" component={Disciplina} 
+                options={{ tabBarLabel: 'Disciplina',  tabBarIcon: () => (<Image source={require('../../assets/livro-16.png')} />) }}/>
         </Tab.Navigator>
   </NavigationContainer>
-
-  );
+  )
 }

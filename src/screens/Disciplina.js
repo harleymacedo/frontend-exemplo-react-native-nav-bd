@@ -1,11 +1,11 @@
 import React from 'react';
-import { StyleSheet, View, Text, Button } from 'react-native';
+import { StyleSheet, View, Text, Button, Image } from 'react-native';
 import { Audio } from 'expo-av';
+//const sound = useRef(new Audio.Sound());
 
 export default function Disciplina() {
 
     const playSound = async () => {
-        console.log('Loading Sound');
         const { sound } = await Audio.Sound.createAsync(
            require('../../assets/japaozin.mp3')
         );
@@ -15,10 +15,16 @@ export default function Disciplina() {
         await sound.playAsync(); 
     }
 
+    const pauseSound = async () => {
+        sound.playAsync();
+    }
+
     return (
         <View style={styles.container}>
             <Text style={styles.text1}>Disciplina</Text>
             <Button title="Tocar Japaozin" onPress={playSound} />
+            <Button title="Parar Japaozin" onPress={pauseSound} />
+            <Image source={require("../../assets/icons8-escola-80.png")} />
         </View>
     )
 }
