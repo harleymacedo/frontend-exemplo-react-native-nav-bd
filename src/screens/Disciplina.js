@@ -1,11 +1,24 @@
 import React from 'react';
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, View, Text, Button } from 'react-native';
+import { Audio } from 'expo-av';
 
 export default function Disciplina() {
+
+    const playSound = async () => {
+        console.log('Loading Sound');
+        const { sound } = await Audio.Sound.createAsync(
+           require('../../assets/japaozin.mp3')
+        );
+        //setSound(sound);
+    
+        console.log('Playing Sound');
+        await sound.playAsync(); 
+    }
 
     return (
         <View style={styles.container}>
             <Text style={styles.text1}>Disciplina</Text>
+            <Button title="Tocar Japaozin" onPress={playSound} />
         </View>
     )
 }

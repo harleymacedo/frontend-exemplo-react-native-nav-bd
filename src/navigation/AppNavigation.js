@@ -21,19 +21,6 @@ function MainTabNavigator () {
         </Tab.Navigator>
     )
 }
-function MainScreenNavigator () {
-    return (
-        <NavigationContainer>
-           <Stack.Navigator>
-               <Stack.Screen name="Home" component={MainTabNavigator} />
-               <Stack.Screen name="Pefil" component={Perfil} />
-               <Stack.Screen name="Grade" component={Grade} />
-               <Stack.Screen name="Projeto" component={Projeto} />
-          </Stack.Navigator>
-        </NavigationContainer>
-    )
-}
-
 
 
 export default function AppNavigation() {
